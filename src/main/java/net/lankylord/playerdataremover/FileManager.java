@@ -47,8 +47,14 @@ class FileManager {
         List<String> enabledWorlds = instance.getConfig().getStringList("enabled-worlds");
         for (String world : enabledWorlds) {
             File dataFolder = getDataFolder(world);
-            if (dataFolder.exists())
+            if (dataFolder.exists()) {
                 playerDataFolders.add(dataFolder);
+            }
+        }
+        // TODO: make it configurable
+        File essentialsData = new File("plugins" + File.separator + "Essentials" + File.separator + "userdata");
+        if(essentialsData.exist()) {
+            playerDataFolders.add(essentialsData);
         }
     }
 
