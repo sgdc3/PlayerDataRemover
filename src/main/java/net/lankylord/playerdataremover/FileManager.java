@@ -53,7 +53,7 @@ class FileManager {
         }
         // TODO: make it configurable
         File essentialsData = new File("plugins" + File.separator + "Essentials" + File.separator + "userdata");
-        if(essentialsData.exist()) {
+        if(essentialsData.exists()) {
             playerDataFolders.add(essentialsData);
         }
     }
